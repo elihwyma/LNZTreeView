@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 @objc public protocol LNZTreeViewDelegate {
     

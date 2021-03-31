@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreGraphics
 
 @objc public protocol TreeNodeProtocol {
     var identifier: String { get }

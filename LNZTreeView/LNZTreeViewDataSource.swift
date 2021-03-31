@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreGraphics
 
 @objc public protocol LNZTreeViewDataSource: class {
     ///The tree view can be sectioned just like the UITableView
