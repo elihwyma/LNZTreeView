@@ -17,14 +17,14 @@ import CoreGraphics
 @IBDesignable @objcMembers
 public class LNZTreeView: UIView {
     public class MinimalTreeNode {
-        var identifier: String
-        var indentationLevel: Int = 0
+        public var identifier: String
+        public var indentationLevel: Int = 0
         
-        var isExpandable: Bool = false
-        var isExpanded: Bool = false
+        public var isExpandable: Bool = false
+        public var isExpanded: Bool = false
         
         
-        var parent: TreeNodeProtocol?
+        public var parent: TreeNodeProtocol?
         
         init(identifier: String) {
             self.identifier = identifier
