@@ -16,7 +16,7 @@ import CoreGraphics
 
 @IBDesignable @objcMembers
 public class LNZTreeView: UIView {
-    class MinimalTreeNode {
+    public class MinimalTreeNode {
         var identifier: String
         var indentationLevel: Int = 0
         
