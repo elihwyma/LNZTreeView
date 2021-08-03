@@ -59,7 +59,7 @@ import CoreGraphics
      */
     @objc optional func treeView(_ treeView: LNZTreeView, didSelectNodeAt indexPath: IndexPath, forParentNode parentNode: TreeNodeProtocol?)
     
-    @objc optional func treeView(_ treeView: LNZTreeView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool
-    @objc optional func treeView(_ treeView: LNZTreeView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool
-    @objc optional func treeView(_ treeView: LNZTreeView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?)
+    @objc optional func treeView(_ treeView: LNZTreeView, shouldShowMenuForRowAt indexPath: IndexPath, forParentNode parentNode: TreeNodeProtocol?) -> Bool
+    @objc optional func treeView(_ treeView: LNZTreeView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?, forParentNode parentNode: TreeNodeProtocol?) -> Bool
+    @objc optional func treeView(_ treeView: LNZTreeView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?, forParentNode parentNode: TreeNodeProtocol?)
 }

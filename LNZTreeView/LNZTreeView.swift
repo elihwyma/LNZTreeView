@@ -594,14 +594,26 @@ extension LNZTreeView: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
-        delegate?.treeView?(self, shouldShowMenuForRowAt: indexPath) ?? false
+        guard let nodes = nodesForSection[indexPath.section] else {
+                fatalError("Something wrong here")
+        }
+        let node = nodes[indexPath.row]
+        return delegate?.treeView?(self, shouldShowMenuForRowAt: indexPath, forParentNode: node.parent) ?? false
     }
     
     public func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        delegate?.treeView?(self, canPerformAction: action, forRowAt: indexPath, withSender: sender) ?? false
+        guard let nodes = nodesForSection[indexPath.section] else {
+                fatalError("Something wrong here")
+        }
+        let node = nodes[indexPath.row]
+        return delegate?.treeView?(self, canPerformAction: action, forRowAt: indexPath, withSender: sender, forParentNode: node.parent) ?? false
     }
     
     public func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-        delegate?.treeView?(self, performAction: action, forRowAt: indexPath, withSender: sender)
+        guard let nodes = nodesForSection[indexPath.section] else {
+                fatalError("Something wrong here")
+        }
+        let node = nodes[indexPath.row]
+        delegate?.treeView?(self, performAction: action, forRowAt: indexPath, withSender: sender, forParentNode: node.parent)
     }
 }
