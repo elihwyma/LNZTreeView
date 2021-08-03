@@ -68,7 +68,7 @@ public class LNZTreeView: UIView {
     
     public var tableViewRowAnimation: UITableView.RowAnimation = .right
 
-    var nodesForSection = [Int: [MinimalTreeNode]]()
+    public var nodesForSection = [Int: [MinimalTreeNode]]()
     
     @IBOutlet public weak var dataSource: LNZTreeViewDataSource?
     @IBOutlet public weak var delegate: LNZTreeViewDelegate?
@@ -87,7 +87,7 @@ public class LNZTreeView: UIView {
         self.init(frame: .zero)
     }
     
-    private func commonInit() {
+    public func commonInit() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -162,7 +162,7 @@ public class LNZTreeView: UIView {
         return nodesForSection[section]?.filter( { parent?.identifier == $0.parent?.identifier }).count ?? 0
     }
     
-    private func toggleExpanded(_ toggle: Bool, node: TreeNodeProtocol, inSection section: Int) -> Bool {
+    public func toggleExpanded(_ toggle: Bool, node: TreeNodeProtocol, inSection section: Int) -> Bool {
         guard node.isExpandable,
             let nodes = nodesForSection[section],
             let indexPath = indexPathForNode(node, inSection: section) else {
@@ -218,11 +218,11 @@ public class LNZTreeView: UIView {
     /**
      Retrieve the index path for a given node in a given section.
      */
-    private func indexPathForNode(_ node: TreeNodeProtocol, inSection section: Int) -> IndexPath? {
+    public func indexPathForNode(_ node: TreeNodeProtocol, inSection section: Int) -> IndexPath? {
         return indexPathForNode(withIdentifier: node.identifier, inSection: section)
     }
     
-    private func indexPathForNode(withIdentifier identifier: String, inSection section: Int) -> IndexPath? {
+    public func indexPathForNode(withIdentifier identifier: String, inSection section: Int) -> IndexPath? {
         guard let nodes = nodesForSection[section],
             let nodeIndex = nodes.index(where: { $0.identifier == identifier }) else {
                 return nil
@@ -364,7 +364,7 @@ public class LNZTreeView: UIView {
         tableView.deleteRows(at: indexPaths, with: .right)
     }
     
-    private func indentationLevelForChildren(inSection section: Int, of parent: TreeNodeProtocol?) -> Int? {
+    public func indentationLevelForChildren(inSection section: Int, of parent: TreeNodeProtocol?) -> Int? {
         var indentationLevel = 0
         if let parent = parent {
             guard parent.isExpandable,
@@ -376,7 +376,7 @@ public class LNZTreeView: UIView {
         return indentationLevel
     }
     
-    private func indexPathForNewNode(at indexPath: IndexPath, in parent: TreeNodeProtocol?) -> IndexPath? {
+    public func indexPathForNewNode(at indexPath: IndexPath, in parent: TreeNodeProtocol?) -> IndexPath? {
         var indentationLevel = 0
         var realIndexPath = IndexPath(row: 0, section: indexPath.section)
         if let parent = parent {
@@ -449,7 +449,7 @@ extension LNZTreeView: UITableViewDataSource {
         return cell
     }
     
-    private func indexInParent(forNodeAt indexPath: IndexPath) -> IndexPath? {
+    public func indexInParent(forNodeAt indexPath: IndexPath) -> IndexPath? {
         guard let nodes = nodesForSection[indexPath.section] else { return nil }
         
         let node = nodes[indexPath.row]
