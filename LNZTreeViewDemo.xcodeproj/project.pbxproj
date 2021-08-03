@@ -13,7 +13,6 @@
 		50D0A41A1FB2215300DE8E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D0A4191FB2215300DE8E02 /* Assets.xcassets */; };
 		50D0A41D1FB2215300DE8E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D0A41B1FB2215300DE8E02 /* LaunchScreen.storyboard */; };
 		50D0A44B1FB22ABF00DE8E02 /* LNZTreeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D0A4421FB22ABF00DE8E02 /* LNZTreeView.framework */; };
-		50D0A4541FB22ABF00DE8E02 /* LNZTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D0A4441FB22ABF00DE8E02 /* LNZTreeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50D0A4571FB22ABF00DE8E02 /* LNZTreeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D0A4421FB22ABF00DE8E02 /* LNZTreeView.framework */; };
 		50D0A4581FB22ABF00DE8E02 /* LNZTreeView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50D0A4421FB22ABF00DE8E02 /* LNZTreeView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		50D0A4601FB22ACF00DE8E02 /* LNZTreeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0A4341FB2217D00DE8E02 /* LNZTreeViewDelegate.swift */; };
@@ -78,11 +77,11 @@
 		50D0A4391FB22A6300DE8E02 /* TestNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNode.swift; sourceTree = "<group>"; };
 		50D0A43A1FB22A6300DE8E02 /* TreeViewMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewMockDelegate.swift; sourceTree = "<group>"; };
 		50D0A4421FB22ABF00DE8E02 /* LNZTreeView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LNZTreeView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50D0A4441FB22ABF00DE8E02 /* LNZTreeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNZTreeView.h; sourceTree = "<group>"; };
 		50D0A4451FB22ABF00DE8E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D0A44A1FB22ABF00DE8E02 /* LNZTreeViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LNZTreeViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D0A4531FB22ABF00DE8E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D0A4641FB22B2200DE8E02 /* LNZTreeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LNZTreeViewTests.swift; sourceTree = "<group>"; };
+		E15A954E26B9AE72000DB10E /* LNZTreeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNZTreeView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +160,8 @@
 				50D0A4331FB2217D00DE8E02 /* LNZTreeViewDataSource.swift */,
 				50D0A4341FB2217D00DE8E02 /* LNZTreeViewDelegate.swift */,
 				50D0A4351FB2217D00DE8E02 /* LNZTreeView.swift */,
-				50D0A4441FB22ABF00DE8E02 /* LNZTreeView.h */,
 				50D0A4451FB22ABF00DE8E02 /* Info.plist */,
+				E15A954E26B9AE72000DB10E /* LNZTreeView.h */,
 			);
 			path = LNZTreeView;
 			sourceTree = "<group>";
@@ -184,7 +183,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D0A4541FB22ABF00DE8E02 /* LNZTreeView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

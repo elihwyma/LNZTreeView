@@ -134,6 +134,15 @@ public class LNZTreeView: UIView {
     }
     
     /**
+       Deselct a selected node
+     - parameter indexPath: The Index Path to deselect
+     - parameter animated: Whether it should be animated
+     */
+    public func deselectRow(at indexPath: IndexPath, animated: Bool = true) {
+        tableView.deselectRow(at: indexPath, animated: animated)
+    }
+    
+    /**
      The number of total rows in a given section. This method returns the complete number regardless of the
      elements level in the tree.
      - parameter section: The index of the section of which you are requesting the number of rows.
@@ -582,5 +591,17 @@ extension LNZTreeView: UITableViewDelegate {
         guard removedNodes > 0 else { return nil }
 
         return index+1...index+removedNodes
+    }
+    
+    public func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        delegate?.treeView?(self, shouldShowMenuForRowAt: indexPath) ?? false
+    }
+    
+    public func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        delegate?.treeView?(self, canPerformAction: action, forRowAt: indexPath, withSender: sender) ?? false
+    }
+    
+    public func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        delegate?.treeView?(self, performAction: action, forRowAt: indexPath, withSender: sender)
     }
 }
